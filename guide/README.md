@@ -108,7 +108,7 @@ Airflow provides [RunEvaluationOperator](https://github.com/apache/airflow/blob/
 
 ## 5. LLMops Pipelines
 
-Putting it all together.
+Now, we'll put it all together. A sample LLMops pipeline could wait for training data to arrive. Once training data arrives, begin the model tuning process, then evaluate the new model. We could optionally validate the evaluation metrics before moving forward. Or otherwise, ensure our prompt remains within budget and then send requests to our newly trained model.
 
 **Sample DAG graph:**
 
@@ -118,7 +118,7 @@ Putting it all together.
 
 ## 6. Comparing Models
 
-Going beyond.
+Going beyond. Use Airflow to compare many LLM models by evaluating them all on the same prompt, uploading evaluation summary metrics to Google Cloud Storage and BigQuery for further analysis.
 
 **Sample DAG graph:**
 
