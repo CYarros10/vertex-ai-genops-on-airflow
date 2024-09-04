@@ -1,7 +1,7 @@
-# llmops-on-airflow
+# Vertex AI LLMops on Airflow
 Step-by-step lab/guide to getting started with Google Vertex AI LLMops on Apache Airflow.
 
-# What is LLMops?
+## What is LLMops?
 
 LLMOps, or large language model operations, refers to the practices and processes involved in managing and operating large language models (LLMs). LLMs are artificial intelligence (AI) models trained on vast datasets of text and code, enabling them to perform various language-related tasks, such as text generation, translation, and question answering.
 
@@ -22,7 +22,7 @@ LLMOps involves a number of different steps, including:
 
 Learn more: [Google Cloud - What is LLMOps](https://cloud.google.com/discover/what-is-llmops?hl=en)
 
-# Generative Models
+## Generative Models
 
 Customize and deploy Gemini models to production in Vertex AI. Gemini, a multimodal model from Google DeepMind, is capable of understanding virtually any input, combining different types of information, and generating almost any output. Prompt and test Gemini in Vertex AI using text, images, video, or code. With Gemini’s advanced reasoning and generation capabilities, developers can try sample prompts for extracting text from images, converting image text to JSON, and even generate answers about uploaded images.
 
@@ -30,7 +30,7 @@ Airflow provides [GenerativeModelGenerateContentOperator](https://github.com/apa
 
 Learn more: [Google Cloud - Generate content with the Gemini API](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/inference)
 
-# Tokens
+## Tokens
 
 The CountTokens API calculates the number of input tokens before sending a request to the Gemini API. Use the CountTokens API to prevent requests from exceeding the model context window, and estimate potential costs based on billable characters. The CountTokens API can use the same contents parameter as Gemini API inference requests.
 
@@ -38,7 +38,7 @@ Airflow provides [CountTokensOperator](https://github.com/apache/airflow/blob/d5
 
 Learn more: [Google Cloud Vertex AI Count Tokens API](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/count-tokens?hl=en)
 
-# Tuning
+## Tuning
 
 Supervised fine-tuning is a good option when you have a well-defined task with available labeled data. It's particularly effective for domain-specific applications where the language or content significantly differs from the data the large model was originally trained on.
 
@@ -48,7 +48,7 @@ Airflow provides [SupervisedFineTuningTrainOperator](https://github.com/apache/a
 
 Learn more: [Google Cloud Vertex AI Tuning API](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/tuning)
 
-# Evaluations
+## Evaluations
 
 The Gen AI Evaluation Service lets you evaluate your large language models (LLMs), both pointwise and pairwise, across several metrics, with your own criteria. You can provide inference-time inputs, LLM responses and additional parameters, and the Gen AI Evaluation Service returns metrics specific to the evaluation task.
 
