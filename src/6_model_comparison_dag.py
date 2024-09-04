@@ -577,7 +577,7 @@ with models.DAG(
     # ----------------------------------------------------------------------------------------------
 
     # TUNED MODEL PIPELINE
-    training_data_exists_sensor >> sft_train_base_task >> evaluate_tuned_base_model_task >> count_tokens_task >> validate_tokens_task >> tuned_base_model_task >> tuned_base_send_report_task
+    training_data_exists_sensor >> count_tokens_task >> validate_tokens_task >> sft_train_base_task >> evaluate_tuned_base_model_task >> tuned_base_model_task >> tuned_base_send_report_task
     
     # PRO MODEL PIPELINE
     training_data_exists_sensor >> count_tokens_task >> validate_tokens_task >> evaluate_pro_model_task  >> pro_model_task >> pro_send_report_task
