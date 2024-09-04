@@ -26,17 +26,15 @@ Learn more: [Google Cloud - What is LLMOps](https://cloud.google.com/discover/wh
 
 Customize and deploy Gemini models to production in Vertex AI. Gemini, a multimodal model from Google DeepMind, is capable of understanding virtually any input, combining different types of information, and generating almost any output. Prompt and test Gemini in Vertex AI using text, images, video, or code. With Gemini’s advanced reasoning and generation capabilities, developers can try sample prompts for extracting text from images, converting image text to JSON, and even generate answers about uploaded images.
 
-Airflow provides [GenerativeModelGenerateContentOperator](https://github.com/apache/airflow/blob/d5467d6818ce7f54abd1a7a84c30f321f63405c5/airflow/providers/google/cloud/operators/vertex_ai/generative_model.py#L507) to interact with Google Generative Models.
+Airflow provides [GenerativeModelGenerateContentOperator](https://github.com/apache/airflow/blob/d5467d6818ce7f54abd1a7a84c30f321f63405c5/airflow/providers/google/cloud/operators/vertex_ai/generative_model.py#L507) to interact with [Google Generative Models](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/inference).
 
-Learn more: [Google Cloud - Generate content with the Gemini API](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/inference)
 
 ## Tokens
 
 The CountTokens API calculates the number of input tokens before sending a request to the Gemini API. Use the CountTokens API to prevent requests from exceeding the model context window, and estimate potential costs based on billable characters. The CountTokens API can use the same contents parameter as Gemini API inference requests.
 
-Airflow provides [CountTokensOperator](https://github.com/apache/airflow/blob/d5467d6818ce7f54abd1a7a84c30f321f63405c5/airflow/providers/google/cloud/operators/vertex_ai/generative_model.py#L672) to interact with the Vertex AI Count Tokens API.
+Airflow provides [CountTokensOperator](https://github.com/apache/airflow/blob/d5467d6818ce7f54abd1a7a84c30f321f63405c5/airflow/providers/google/cloud/operators/vertex_ai/generative_model.py#L672) to interact with the [Vertex AI Count Tokens API](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/count-tokens?hl=en).
 
-Learn more: [Google Cloud Vertex AI Count Tokens API](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/count-tokens?hl=en)
 
 ## Tuning
 
@@ -44,9 +42,8 @@ Supervised fine-tuning is a good option when you have a well-defined task with a
 
 Supervised fine-tuning adapts model behavior with a labeled dataset. This process adjusts the model's weights to minimize the difference between its predictions and the actual labels.
 
-Airflow provides [SupervisedFineTuningTrainOperator](https://github.com/apache/airflow/blob/d5467d6818ce7f54abd1a7a84c30f321f63405c5/airflow/providers/google/cloud/operators/vertex_ai/generative_model.py#L582) to interact with the Vertex AI Tuning API.
+Airflow provides [SupervisedFineTuningTrainOperator](https://github.com/apache/airflow/blob/d5467d6818ce7f54abd1a7a84c30f321f63405c5/airflow/providers/google/cloud/operators/vertex_ai/generative_model.py#L582) to interact with the [Vertex AI Tuning API](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/tuning).
 
-Learn more: [Google Cloud Vertex AI Tuning API](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/tuning)
 
 ## Evaluations
 
@@ -54,9 +51,8 @@ The Gen AI Evaluation Service lets you evaluate your large language models (LLMs
 
 Metrics include model-based metrics, such as PointwiseMetric and PairwiseMetric, and in-memory computed metrics, such as rouge, bleu, and tool function-call metrics. PointwiseMetric and PairwiseMetric are generic model-based metrics that you can customize with your own criteria. Because the service takes the prediction results directly from models as input, the evaluation service can perform both inference and subsequent evaluation on all models supported by Vertex AI.
 
-Airflow provides [RunEvaluationOperator](https://github.com/apache/airflow/blob/d5467d6818ce7f54abd1a7a84c30f321f63405c5/airflow/providers/google/cloud/operators/vertex_ai/generative_model.py#L741) to interact with the Vertex AI Rapid Evaluation API.
+Airflow provides [RunEvaluationOperator](https://github.com/apache/airflow/blob/d5467d6818ce7f54abd1a7a84c30f321f63405c5/airflow/providers/google/cloud/operators/vertex_ai/generative_model.py#L741) to interact with the [Vertex AI Rapid Evaluation API](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/evaluation).
 
-Learn more: [Google Cloud Vertex AI Evaluation API](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/evaluation)
 
 
 
