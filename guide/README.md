@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-
+Note: the Airflow operators in this guide are brand-new, and are not available in the latest Airflow (2.10.0) release. You will need to clone the Apache Airflow GitHub repository to work with them at this point in time. Please stay tuned for future releases to deploy this code in your Airflow environments.
 
 ## 1. Generating Content
 
