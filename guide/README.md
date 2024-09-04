@@ -20,6 +20,7 @@ Here we will use Airflow operators to submit requests to Vertex AI / Gemini mode
     )
 ```
 **Sample DAG graph:**
+
 ![generate_content_image](images/generate_content.png)
 
 [source code](src/1_generate_content_dag.py)
@@ -39,6 +40,7 @@ Here we will use Airflow operators to count tokens before submitting a request t
     )
 ```
 **Sample DAG graph:**
+
 ![count_token_image](images/count_tokens.png)
 
 [source code](src/2_count_tokens_dag.py)
@@ -56,6 +58,10 @@ Here we will use Airflow operators to count tokens before submitting a request t
         train_dataset=f"gs://{TRAIN_DATA_BUCKET}/{TRAIN_DATA_PATH}",
     )
 ```
+
+**Sample DAG graph:**
+
+![count_token_image](images/supervised_fine_tuning.png)
 
 [source code](src/3_supervised_fine_tuning_dag.py)
 
@@ -78,6 +84,7 @@ Here we will use Airflow operators to count tokens before submitting a request t
 ```
 
 **Sample DAG graph:**
+
 ![evaluation_image](images/evaluation.png)
 
 [source code](src/4_run_evaluations_dag.py)
@@ -87,6 +94,7 @@ Here we will use Airflow operators to count tokens before submitting a request t
 Putting it all together.
 
 **Sample DAG graph:**
+
 ![evaluation_image](images/llmops_pipeline.png)
 
 [source code](src/5_llmops_pipeline_dag.py)
@@ -96,6 +104,7 @@ Putting it all together.
 Going beyond.
 
 **Sample DAG graph:**
+
 ![evaluation_image](images/model_comparison.png)
 
 [source code](src/6_model_comparison_dag.py)
