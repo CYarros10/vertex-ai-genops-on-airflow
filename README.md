@@ -1,5 +1,7 @@
 # A Guide to Vertex AI LLMops on Airflow
 
+This guide moves through the different steps of an LLMops pipeline on Airflow, and provides sample DAGs for entire pipelines and other use-cases.
+
 ## Getting Started
 
 What is LLMops?
