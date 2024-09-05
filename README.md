@@ -148,3 +148,7 @@ Going beyond. Use Airflow to compare many LLM models by evaluating them all on t
 ![evaluation_image](images/model_comparison.png)
 
 [source code](src/6_model_comparison_dag.py)
+
+# Next Steps
+
+Stay tuned for additional Vertex AI support in Airflow. There are new LLM features released every day.
