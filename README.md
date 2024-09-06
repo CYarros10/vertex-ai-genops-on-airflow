@@ -151,4 +151,6 @@ Going beyond. Use Airflow to compare many LLM models by evaluating them all on t
 
 # Next Steps
 
-Stay tuned for additional Vertex AI support in Airflow. There are new LLM features released every day.
+Stay tuned for additional Vertex AI Operator support in Airflow. There are new LLM features released every day.
+
+Feel free to check out [samples/](samples/) for inspiration to integrate generative AI into your Airflow DAGs.
