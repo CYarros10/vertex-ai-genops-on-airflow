@@ -562,16 +562,6 @@ with models.DAG(
         },
     )
 
-    load_to_bigquery_task = GCSToBigQueryOperator( 
-        task_id="load_to_bigquery",
-        bucket=BUCKET_NAME,
-        source_objects=["sample_evals/*"],  
-        destination_project_dataset_table='cy-artifacts.sandbox.llm_evaluations',
-        source_format='NEWLINE_DELIMITED_JSON',
-        create_disposition='CREATE_IF_NEEDED',
-        write_disposition='WRITE_TRUNCATE',
-    )
-
     # ----------------------------------------------------------------------------------------------
     # Dependencies
     # ----------------------------------------------------------------------------------------------
@@ -596,14 +586,3 @@ with models.DAG(
     
     # GROUNDED MODEL PIPELINE
     training_data_exists_sensor >> count_tokens_task >> validate_tokens_task >> evaluate_grounded_model_task >> grounded_model_task >> grounded_send_report_task
-
-    # once every pipeline is done, load to bq
-    [
-        tuned_base_send_report_task,
-        pro_send_report_task,
-        balanced_send_report_task,
-        deterministic_send_report_task,
-        random_send_report_task,
-        flash_send_report_task,
-        grounded_send_report_task
-    ] >> load_to_bigquery_task
