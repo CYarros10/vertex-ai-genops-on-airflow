@@ -1,14 +1,14 @@
-# A Guide to Vertex AI Generative AI on Airflow
+# A Guide to Vertex AI Generative AI Ops on Airflow
 
-This guide moves through the different steps of an GenAI Ops pipeline on Airflow, and provides sample DAGs for entire pipelines and other use-cases.
+This guide moves through the different steps of an GenOps pipeline on Airflow, and provides sample DAGs for entire pipelines and other use-cases.
 
 ## Getting Started
 
-What is GenAI Ops?
+What is GenOps?
 
-GenAI Ops, or generative model operations, refers to the practices and processes involved in managing and operating generative models. Generative Models are artificial intelligence (AI) models trained on vast datasets of text and code, enabling them to perform various language-related tasks, such as text generation, translation, and question answering.
+GenOps, or generative AI operations, refers to the practices and processes involved in managing and operating generative models. Generative Models are artificial intelligence models trained on vast datasets of text and code, enabling them to perform various language-related tasks, such as text generation, translation, and question answering.
 
-GenAI Ops involves a comprehensive set of activities, including:
+GenOps involves a comprehensive set of activities, including:
 
 - Model deployment and maintenance: deploying and managing generative models on cloud platforms or on-premises infrastructure
 - Data management: curating and preparing training data, as well as monitoring and maintaining data quality
@@ -16,14 +16,12 @@ GenAI Ops involves a comprehensive set of activities, including:
 - Monitoring and evaluation: tracking generative model performance, identifying errors, and optimizing models
 - Security and compliance: ensuring the security and regulatory compliance of generative model operations
 
-GenAI Ops involves a number of different steps, including:
+GenOps involves a number of different steps, including:
 
 - Data collection and preparation: generative models require large amounts of data to train. This data must be collected and prepared in a way that is suitable for training the model.
 - Model development: generative models are developed using a variety of techniques, including unsupervised learning, supervised learning, and reinforcement learning.
 - Model deployment: Once a generative model has been developed, it must be deployed to a production environment. This involves setting up the necessary infrastructure and configuring the model to run on a specific platform.
 - Model management: generative models require ongoing management to ensure that they are performing as expected. This includes monitoring the model's performance, retraining the model as needed, and making sure that the model is secure.
-
-Learn more: [Google Cloud - What is LLMOps](https://cloud.google.com/discover/what-is-llmops?hl=en)
 
 Note: the Airflow operators in this guide are brand-new, and are not available in the latest Airflow (2.10.0) release. You will need to clone the [Apache Airflow GitHub repository](https://github.com/apache/airflow/tree/main) to work with them at this point in time. Please stay tuned for future releases to deploy this code in your Airflow environments.
 
@@ -129,15 +127,15 @@ Airflow provides [RunEvaluationOperator](https://github.com/apache/airflow/blob/
 
 [source code](src/4_run_evaluations_dag.py)
 
-## 5. GenAI Ops Pipelines
+## 5. GenOps Pipelines
 
-Now, we'll put it all together. A sample GenAI Ops pipeline could wait for training data to arrive. Once training data arrives, begin the model tuning process, then evaluate the new model. We could optionally validate the evaluation metrics before moving forward. Or otherwise, ensure our prompt remains within budget and then send requests to our newly trained model.
+Now, we'll put it all together. A sample GenOps pipeline could wait for training data to arrive. Once training data arrives, begin the model tuning process, then evaluate the new model. We could optionally validate the evaluation metrics before moving forward. Or otherwise, ensure our prompt remains within budget and then send requests to our newly trained model.
 
 **Sample DAG graph:**
 
-![evaluation_image](images/GenAI Ops_pipeline.png)
+![evaluation_image](images/GenOps_pipeline.png)
 
-[source code](src/5_GenAI Ops_pipeline_dag.py)
+[source code](src/5_GenOps_pipeline_dag.py)
 
 ## 6. Comparing Models
 
