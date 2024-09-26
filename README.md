@@ -23,7 +23,7 @@ GenAI Ops involves a number of different steps, including:
 - Model deployment: Once a generative model has been developed, it must be deployed to a production environment. This involves setting up the necessary infrastructure and configuring the model to run on a specific platform.
 - Model management: generative models require ongoing management to ensure that they are performing as expected. This includes monitoring the model's performance, retraining the model as needed, and making sure that the model is secure.
 
-Learn more: [Google Cloud - What is GenAI Ops](https://cloud.google.com/discover/what-is-GenAI Ops?hl=en)
+Learn more: [Google Cloud - What is LLMOps](https://cloud.google.com/discover/what-is-llmops?hl=en)
 
 Note: the Airflow operators in this guide are brand-new, and are not available in the latest Airflow (2.10.0) release. You will need to clone the [Apache Airflow GitHub repository](https://github.com/apache/airflow/tree/main) to work with them at this point in time. Please stay tuned for future releases to deploy this code in your Airflow environments.
 
