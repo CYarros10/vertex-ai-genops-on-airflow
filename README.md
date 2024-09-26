@@ -133,9 +133,9 @@ Now, we'll put it all together. A sample GenOps pipeline could wait for training
 
 **Sample DAG graph:**
 
-![evaluation_image](images/GenOps_pipeline.png)
+![evaluation_image](images/genops_pipeline.png)
 
-[source code](src/5_GenOps_pipeline_dag.py)
+[source code](src/5_genops_pipeline_dag.py)
 
 ## 6. Comparing Models
 

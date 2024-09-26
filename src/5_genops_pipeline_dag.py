@@ -64,7 +64,7 @@ SAFETY_SETTINGS = {
     HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
 }
 
-# System instructions are like a preamble that you add before the LLM gets exposed to any further
+# System instructions are like a preamble that you add before the generative model gets exposed to any further
 # instructions from the user. It lets users steer the behavior of the model based on their specific
 # needs and use cases. When you set a system instruction, you give the model additional context to
 # understand the task, provide more customized responses, and adhere to specific guidelines over
@@ -73,9 +73,9 @@ SAFETY_SETTINGS = {
 # https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/system-instructions
 SYSTEM_INSTRUCTION = "Always respond in plain-text only."
 
-# context: Inference-time text containing all information, which can be used in the LLM response.
+# context: Inference-time text containing all information, which can be used in the generative model response.
 # instruction: Instruction used at inference time.
-# reference: Golden LLM response for reference.
+# reference: Golden generative model response for reference.
 # https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/evaluation#evaluate_an_output
 CONTEXT="To make a classic spaghetti carbonara, start by bringing a large pot of salted water to a boil. While the water is heating up, cook pancetta or guanciale in a skillet with olive oil over medium heat until it's crispy and golden brown. Once the pancetta is done, remove it from the skillet and set it aside. In the same skillet, whisk together eggs, grated Parmesan cheese, and black pepper to make the sauce. When the pasta is cooked al dente, drain it and immediately toss it in the skillet with the egg mixture, adding a splash of the pasta cooking water to create a creamy sauce.",
 INSTRUCTION = "Summarize the following article"
@@ -139,9 +139,9 @@ SAMPLE_PROMPT = f"{INSTRUCTION}. Article: {CONTEXT}"
 # --------------------------------------------------------------------------------------------------
 
 with models.DAG(
-    "llmops_pipeline_dag_v1",
-    description="Demonstration of Vertex AI LLMops on Airflow/Composer",
-    tags=["demo", "vertex_ai", "generative_ai", "llmops"],
+    "genai_ops_pipeline_dag_v1",
+    description="Demonstration of Vertex AI GenAIOps on Airflow/Composer",
+    tags=["demo", "vertex_ai", "generative_ai",],
     schedule="@once",
     catchup=False,
     is_paused_upon_creation=True,
