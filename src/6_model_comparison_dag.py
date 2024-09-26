@@ -1,5 +1,5 @@
 """
-Example Airflow DAG for Google Vertex AI LLMops.
+Example Airflow DAG for Google Vertex AI GenOps.
 """
 
 from datetime import datetime, timedelta
@@ -33,7 +33,7 @@ PROJECT_ID = "cy-artifacts"
 REGION = "us-central1"
 BUCKET_NAME = "cy-sandbox"
 
-# LLM Models
+# Models
 PRO_MODEL = "gemini-1.0-pro-002"
 FLASH_MODEL = "gemini-1.5-flash"
 
@@ -49,7 +49,7 @@ TOKEN_BUDGET = 500
 TRAIN_DATA_BUCKET = "cloud-samples-data"
 TRAIN_DATA_PATH = "ai-platform/generative_ai/sft_train_data.jsonl"
 
-# System instructions are like a preamble that you add before the LLM gets exposed to any further
+# System instructions are like a preamble added before the generative model is exposed further
 # instructions from the user. It lets users steer the behavior of the model based on their specific
 # needs and use cases. When you set a system instruction, you give the model additional context to
 # understand the task, provide more customized responses, and adhere to specific guidelines over
@@ -82,9 +82,9 @@ DETERMINISTIC_GEN_CONFIG = {"top_k": 1, "top_p": 0.0, "temperature": 0.1}
 RANDOM_GEN_CONFIG = {"top_k": 40, "top_p": 0.9, "temperature": 1.0}
 BALANCED_GEN_CONFIG = {"top_k": 20, "top_p": 0.5, "temperature": 0.5}
 
-# context: Inference-time text containing all information, which can be used in the LLM response.
+# context: Inference-time text containing all information, which can be used in the generative model response.
 # instruction: Instruction used at inference time.
-# reference: Golden LLM response for reference.
+# reference: Golden generative model response for reference.
 # https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/evaluation#evaluate_an_output
 CONTEXT="To make a classic spaghetti carbonara, start by bringing a large pot of salted water to a boil. While the water is heating up, cook pancetta or guanciale in a skillet with olive oil over medium heat until it's crispy and golden brown. Once the pancetta is done, remove it from the skillet and set it aside. In the same skillet, whisk together eggs, grated Parmesan cheese, and black pepper to make the sauce. When the pasta is cooked al dente, drain it and immediately toss it in the skillet with the egg mixture, adding a splash of the pasta cooking water to create a creamy sauce.",
 INSTRUCTION = "Summarize the following article"
@@ -148,8 +148,8 @@ SAMPLE_PROMPT = f"{INSTRUCTION}. Article: {CONTEXT}"
 
 with models.DAG(
     "model_comparison_dag_v1",
-    description="Demonstration of Vertex AI LLMops on Airflow/Composer",
-    tags=["demo", "vertex_ai", "generative_ai", "LLMops"],
+    description="Demonstration of Vertex AI GenOps on Airflow/Composer",
+    tags=["demo", "vertex_ai", "generative_ai", "genops"],
     schedule="@once",
     catchup=False,
     is_paused_upon_creation=True,
@@ -228,9 +228,9 @@ with models.DAG(
     # Run evaluations for various model configurations
     # ----------------------------------------------------------------------------------------------
 
-    # The Gen AI Evaluation Service lets you evaluate your large language models (LLMs), both
+    # The Gen AI Evaluation Service lets you evaluate your generative models, both
     # pointwise and pairwise, across several metrics, with your own criteria. You can provide
-    # inference-time inputs, LLM responses and additional parameters, and the Gen AI Evaluation
+    # inference-time inputs, model responses and additional parameters, and the Gen AI Evaluation
     # Service returns metrics specific to the evaluation task.
     # https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/evaluation#python
     evaluate_pro_model_task = RunEvaluationOperator(

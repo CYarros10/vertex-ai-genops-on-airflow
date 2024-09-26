@@ -37,7 +37,7 @@ TRAIN_DATA_PATH = "ai-platform/generative_ai/sft_train_data.jsonl"
 with models.DAG(
     "supervised_fine_tuning_dag_v1",
     description="Demonstration of Vertex AI Supervised Fine Tuning on Airflow/Composer",
-    tags=["demo", "vertex_ai", "generative_ai", "tuning"],
+    tags=["demo", "vertex_ai", "generative_ai", "tuning", "genops"],
     schedule="@once",
     catchup=False,
     is_paused_upon_creation=True,

@@ -98,7 +98,7 @@ SAMPLE_PROMPT = f"{INSTRUCTION}. Article: {CONTEXT}"
 with models.DAG(
     "run_evaluation_dag_v1",
     description="Demonstration of Vertex AI Evaluation API on Airflow/Composer",
-    tags=["demo", "vertex_ai", "generative_ai", "evaluation"],
+    tags=["demo", "vertex_ai", "generative_ai", "evaluation", "genops"],
     schedule="@once",
     catchup=False,
     is_paused_upon_creation=True,
@@ -118,7 +118,7 @@ with models.DAG(
     # Run evaluations for various model configurations
     # ----------------------------------------------------------------------------------------------
 
-    # The Gen AI Evaluation Service lets you evaluate your large language models (LLMs), both
+    # The Gen AI Evaluation Service lets you evaluate your generative models, both
     # pointwise and pairwise, across several metrics, with your own criteria. You can provide
     # inference-time inputs, LLM responses and additional parameters, and the Gen AI Evaluation
     # Service returns metrics specific to the evaluation task.

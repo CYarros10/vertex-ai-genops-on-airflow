@@ -53,7 +53,7 @@ splash of the pasta cooking water to create a creamy sauce.
 with models.DAG(
     "count_tokens_dag_v1",
     description="Demonstration of Vertex AI Count Tokens API on Airflow/Composer",
-    tags=["demo", "vertex_ai", "generative_ai"],
+    tags=["demo", "vertex_ai", "generative_ai", "genops"],
     schedule="@once",
     catchup=False,
     is_paused_upon_creation=True,

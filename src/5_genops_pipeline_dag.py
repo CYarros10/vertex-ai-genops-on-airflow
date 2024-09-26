@@ -1,5 +1,5 @@
 """
-Example Airflow DAG for Google Vertex AI LLMops.
+Example Airflow DAG for Google Vertex AI GenOps.
 """
 
 from uuid import uuid4
@@ -189,9 +189,9 @@ with models.DAG(
     # Run evaluations for various model configurations
     # ----------------------------------------------------------------------------------------------
 
-    # The Gen AI Evaluation Service lets you evaluate your large language models (LLMs), both
+    # The Gen AI Evaluation Service lets you evaluate your generative models, both
     # pointwise and pairwise, across several metrics, with your own criteria. You can provide
-    # inference-time inputs, LLM responses and additional parameters, and the Gen AI Evaluation
+    # inference-time inputs, model responses and additional parameters, and the Gen AI Evaluation
     # Service returns metrics specific to the evaluation task.
     # https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/evaluation#python
     evaluate_tuned_base_model_task = RunEvaluationOperator(

@@ -25,7 +25,7 @@ FLASH_MODEL = "gemini-1.5-flash"
 # https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models#gemini-1.5-pro
 PRO_MODEL = "gemini-1.5-pro-001"
 
-# System instructions are like a preamble that you add before the LLM gets exposed to any further
+# System instructions are like a preamble added before the generative model gets exposed to further
 # instructions from the user. It lets users steer the behavior of the model based on their specific
 # needs and use cases. When you set a system instruction, you give the model additional context to
 # understand the task, provide more customized responses, and adhere to specific guidelines over
@@ -79,6 +79,7 @@ with models.DAG(
         "demo",
         "vertex_ai",
         "generative_ai",
+        "genops"
     ],
     schedule="@once",
     catchup=False,
